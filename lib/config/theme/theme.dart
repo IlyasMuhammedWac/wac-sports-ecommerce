@@ -6,12 +6,16 @@ class Themes {
     colorScheme: ColorScheme.dark(
       background: ColorPalette.primaryColorDark,
       onSecondary: ColorPalette.textColorWhite,
+      onTertiary: ColorPalette.textColorGrey,
+      error: ColorPalette.errorColor,
     ),
   );
   static final lightTheme = ThemeData(
     colorScheme: ColorScheme.light(
-      background: ColorPalette.primaryColorDark,
+      background: ColorPalette.primaryColorLight,
       onSecondary: ColorPalette.textColorBlack,
+      onTertiary: ColorPalette.textColorGrey,
+      error: ColorPalette.errorColor,
     ),
   );
 }

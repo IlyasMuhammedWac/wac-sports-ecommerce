@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wac_sports/config/routes/route_generator.dart';
+import 'package:wac_sports/config/routes/routes.dart';
 import 'package:wac_sports/config/theme/theme.dart';
 
 void main() {
@@ -18,9 +20,11 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Wac sports',
+        initialRoute: Routes.splash,
+        onGenerateRoute: RouteGenerator.generateRoute,
         theme: Themes.lightTheme,
         darkTheme: Themes.darkTheme,
-        themeMode: ThemeMode.system,
+        themeMode: ThemeMode.light,
       ),
     );
   }
