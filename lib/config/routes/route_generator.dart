@@ -5,6 +5,7 @@ import 'package:wac_sports/feature/authentication/view/forget_password.dart';
 import 'package:wac_sports/feature/authentication/view/login_screen.dart';
 import 'package:wac_sports/feature/authentication/view/register_screen.dart';
 import 'package:wac_sports/feature/authentication/view/splash_screen.dart';
+import 'package:wac_sports/feature/home/view/landing_screen.dart';
 
 class RouteGenerator {
   static Route generateRoute(RouteSettings settings) {
@@ -19,6 +20,9 @@ class RouteGenerator {
             cupertinoPageRoute: true);
       case Routes.forgotPassword:
         return _buildRoute(Routes.forgotPassword, const ForgotPasswordScreen(),
+            cupertinoPageRoute: true);
+      case Routes.landingScreen:
+        return _buildRoute(Routes.landingScreen, const LandingScreen(),
             cupertinoPageRoute: true);
       default:
         return _buildRoute('/', const SizedBox());

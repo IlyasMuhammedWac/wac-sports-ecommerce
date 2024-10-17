@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "507082849019",
+    "project_id": "ecommerce-f6aad",
+    "storage_bucket": "ecommerce-f6aad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507082849019:android:f6d2e044fc6ec388a14e5e",
+        "android_client_info": {
+          "package_name": "com.example.wac_sports"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyq0T-lmwIT0x1c-QLyQbuw0ENw7Y8eoY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

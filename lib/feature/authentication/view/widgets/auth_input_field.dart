@@ -26,6 +26,7 @@ class AuthInputField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: TextFormField(
+        autovalidateMode: AutovalidateMode.disabled,
         controller: controller,
         validator: validator,
         keyboardType: keyboardType,
