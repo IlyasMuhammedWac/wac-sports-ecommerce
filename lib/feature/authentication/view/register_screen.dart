@@ -1,5 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -10,8 +8,8 @@ import 'package:wac_sports/config/styles/font_palette.dart';
 import 'package:wac_sports/core/constants/app_strings.dart';
 import 'package:wac_sports/core/utils/snack_bar.dart';
 import 'package:wac_sports/core/utils/validators.dart';
+import 'package:wac_sports/di.dart';
 import 'package:wac_sports/feature/authentication/model/auth_input_model.dart';
-import 'package:wac_sports/feature/authentication/service/auth_service.dart';
 import 'package:wac_sports/feature/authentication/view/widgets/auth_input_field.dart';
 import 'package:wac_sports/feature/authentication/view/widgets/custom_button.dart';
 import 'package:wac_sports/feature/authentication/view_model/auth_view_model.dart';
@@ -44,9 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
-      value: AuthViewModel(
-          authRepository:
-              AuthService(FirebaseAuth.instance, FirebaseFirestore.instance)),
+      value: sl.get<AuthViewModel>(),
       child: Scaffold(
         body: SafeArea(
           child: Padding(

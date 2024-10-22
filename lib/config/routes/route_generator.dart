@@ -4,6 +4,7 @@ import 'package:wac_sports/config/routes/routes.dart';
 import 'package:wac_sports/feature/authentication/view/forget_password.dart';
 import 'package:wac_sports/feature/authentication/view/login_screen.dart';
 import 'package:wac_sports/feature/authentication/view/register_screen.dart';
+import 'package:wac_sports/feature/authentication/view/reset_password.dart';
 import 'package:wac_sports/feature/authentication/view/splash_screen.dart';
 import 'package:wac_sports/feature/home/view/landing_screen.dart';
 
@@ -24,10 +25,17 @@ class RouteGenerator {
       case Routes.landingScreen:
         return _buildRoute(Routes.landingScreen, const LandingScreen(),
             cupertinoPageRoute: true);
+      case Routes.resetPassword:
+        final code = settings.arguments as String;
+        return _buildRoute(
+            Routes.resetPassword, ResetPasswordScreen(code: code));
       default:
         return _buildRoute('/', const SizedBox());
     }
   }
+
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
 
   static Route _buildRoute(String route, Widget widget,
       {bool cupertinoPageRoute = false}) {

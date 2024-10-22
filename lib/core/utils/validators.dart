@@ -21,6 +21,17 @@ class Validators {
     return null;
   }
 
+  static String? confirmPasswordValidator(
+      String? confirmPassword, String? password) {
+    if (confirmPassword == null || confirmPassword.isEmpty) {
+      return "Confirm password is required";
+    }
+    if (confirmPassword != password) {
+      return "Passwords do not match";
+    }
+    return null;
+  }
+
   static String? usernameValidator(String? username) {
     if (username == null || username.isEmpty) {
       return "Username is required";

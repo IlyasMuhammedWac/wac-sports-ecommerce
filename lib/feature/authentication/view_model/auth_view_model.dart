@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:wac_sports/feature/authentication/model/auth_input_model.dart';
 import 'package:wac_sports/feature/authentication/repo/auth_repo.dart';
@@ -41,6 +40,48 @@ class AuthViewModel extends ChangeNotifier with AuthViewModelHelpers {
     } else {
       onError?.call(response.message);
     }
+    resetProgress();
+    updateButtonLoadingState(LoadState.loaded);
+  }
+
+  void forgotPassword(
+    String email, {
+    Function(String success)? onSuccess,
+    Function(String error)? onError,
+  }) async {
+    updateButtonLoadingState(LoadState.loading);
+
+    startProgressAnimation();
+
+    final response = await authRepository.forgotPassword(email);
+
+    await completeProgress();
+
+    if (response.result) {
+      onSuccess?.call(response.message);
+    } else {
+      onError?.call(response.message);
+    }
+
+    resetProgress();
+    updateButtonLoadingState(LoadState.loaded);
+  }
+
+  updatePassword(
+      {required String code,
+      required String newPassword,
+      Function(String success)? onSuccess,
+      Function(String error)? onError}) async {
+    updateButtonLoadingState(LoadState.loading);
+    startProgressAnimation();
+    final response = await authRepository.updatePassword(newPassword, code);
+    await completeProgress();
+    if (response.result) {
+      onSuccess?.call(response.message);
+    } else {
+      onError?.call(response.message);
+    }
+
     resetProgress();
     updateButtonLoadingState(LoadState.loaded);
   }

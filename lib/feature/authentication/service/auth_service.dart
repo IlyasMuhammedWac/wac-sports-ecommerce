@@ -38,4 +38,39 @@ class AuthService extends AuthRepository {
       return AuthResult(result: false, message: "Something went wrong");
     }
   }
+
+  @override
+  Future<AuthResult> forgotPassword(String email) async {
+    try {
+      await _auth.sendPasswordResetEmail(
+          email: email,
+          actionCodeSettings: ActionCodeSettings(
+            url: 'https://demosports.page.link/resetPasswordScreen',
+            androidPackageName: 'com.example.wac_sports',
+            androidInstallApp: true,
+            handleCodeInApp: true,
+            
+          ));
+      return AuthResult(result: true, message: "Email send to $email");
+    } on FirebaseAuthException catch (e) {
+      return AuthResult(result: false, message: getErrorMessage(e.code));
+    } catch (e) {
+      return AuthResult(result: false, message: "Someting went wrong");
+    }
+  }
+
+  @override
+  Future<AuthResult> updatePassword(String newPassword, String code) async {
+    try {
+      await _auth.confirmPasswordReset(code: code, newPassword: newPassword);
+      return AuthResult(
+          result: true,
+          message:
+              "Your password has been successfully updated. You can login with your new password");
+    } on FirebaseAuthException catch (e) {
+      return AuthResult(result: false, message: getErrorMessage(e.code));
+    } catch (e) {
+      return AuthResult(result: false, message: "Something went wrong");
+    }
+  }
 }
