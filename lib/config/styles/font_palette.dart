@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FontPalette {
-  static TextStyle get blackBold => TextStyle(
-      fontSize: 14.sp, fontWeight: FontWeight.w700, color: Colors.black);
+  static TextStyle get blackBold => GoogleFonts.montserrat(
+      fontSize: 14.sp, fontWeight: FontWeight.bold, color: Colors.black);
 
-  static TextStyle get blackMedium => TextStyle(
+  static TextStyle get blackMedium => GoogleFonts.montserrat(
       fontSize: 14.sp, fontWeight: FontWeight.w500, color: Colors.black);
 
-  static TextStyle get blackRegular => TextStyle(
+  static TextStyle get blackRegular => GoogleFonts.montserrat(
       fontSize: 14.sp, fontWeight: FontWeight.w400, color: Colors.black);
 
-  static TextStyle get whiteBold => TextStyle(
-      fontSize: 14.sp, fontWeight: FontWeight.w700, color: Colors.white);
+  static TextStyle get whiteBold => GoogleFonts.montserrat(
+      fontSize: 14.sp, fontWeight: FontWeight.bold, color: Colors.white);
 
-  static TextStyle get whiteMedium => TextStyle(
+  static TextStyle get whiteMedium => GoogleFonts.montserrat(
       fontSize: 14.sp, fontWeight: FontWeight.w500, color: Colors.white);
 
-  static TextStyle get whiteRegular => TextStyle(
+  static TextStyle get whiteRegular => GoogleFonts.montserrat(
       fontSize: 14.sp, fontWeight: FontWeight.w400, color: Colors.white);
 
-  static TextStyle get greenBold => TextStyle(
-      fontSize: 14.sp, fontWeight: FontWeight.w700, color: Colors.green);
+  static TextStyle get greenBold => GoogleFonts.montserrat(
+      fontSize: 14.sp, fontWeight: FontWeight.bold, color: Colors.green);
 }
