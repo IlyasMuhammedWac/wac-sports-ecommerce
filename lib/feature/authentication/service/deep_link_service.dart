@@ -2,7 +2,6 @@ import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:wac_sports/config/routes/route_generator.dart';
 import 'package:wac_sports/config/routes/routes.dart';
-import 'package:wac_sports/core/utils/snack_bar.dart';
 
 class DeepLinkService {
   final FirebaseDynamicLinks _dynamicLinks;
@@ -17,8 +16,6 @@ class DeepLinkService {
       final String? mode = dyanamicLinkData.queryParameters['mode'];
       final String? oobCode = dyanamicLinkData.queryParameters['oobCode'];
       if (mode == 'resetPassword' && oobCode != null) {
-        SnackBars.showErrorSnackBar(
-            "inital call", RouteGenerator.navigatorKey.currentContext!);
         handleDeepLink(oobCode);
       }
     }
@@ -28,8 +25,6 @@ class DeepLinkService {
         final String? mode = deepLink.queryParameters['mode'];
         final String? oobCode = deepLink.queryParameters['oobCode'];
         if (mode == 'resetPassword' && oobCode != null) {
-          SnackBars.showErrorSnackBar(
-              "listen call", RouteGenerator.navigatorKey.currentContext!);
           handleDeepLink(oobCode);
         }
       }

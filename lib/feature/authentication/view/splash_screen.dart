@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:wac_sports/config/routes/routes.dart';
 import 'package:wac_sports/di.dart';
@@ -12,8 +13,13 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 2), () {
       if (sl.get<DeepLinkService>().getInitialDeepLink == null) {
-        Navigator.pushNamedAndRemoveUntil(
-            context, Routes.login, (route) => false);
+        if (FirebaseAuth.instance.currentUser == null) {
+          Navigator.pushNamedAndRemoveUntil(
+              context, Routes.login, (route) => false);
+        } else {
+          Navigator.pushNamedAndRemoveUntil(
+              context, Routes.landingScreen, (route) => false);
+        }
       }
     });
     return Scaffold(
