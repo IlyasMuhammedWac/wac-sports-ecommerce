@@ -7,5 +7,6 @@ class ColorPalette {
   static Color get textColorWhite => Colors.white;
   static Color get textColorGrey => Colors.grey;
   static Color get errorColor => Colors.red;
+  static Color get greenColor => Colors.green;
   static Color get primaryContainer => const Color(0xffDB3022);
 }

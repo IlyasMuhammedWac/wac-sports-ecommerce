@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:wac_sports/config/routes/routes.dart';
 import 'package:wac_sports/di.dart';
 import 'package:wac_sports/feature/authentication/service/deep_link_service.dart';
+import 'package:wac_sports/feature/home/view/widgets/custom_loader.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -25,7 +26,9 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: const Center(
-        child: CircularProgressIndicator.adaptive(),
+        child: CustomLoader(
+          size: Size(50, 50),
+        ),
       ),
     );
   }
