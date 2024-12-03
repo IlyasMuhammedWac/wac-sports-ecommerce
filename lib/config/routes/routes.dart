@@ -5,4 +5,5 @@ class Routes {
   static const forgotPassword = '/forgotPassword';
   static const landingScreen = '/landingScreen';
   static const resetPassword = '/resetPasswordScreen';
+  static const categoryScreen = '/categoryScreen';
 }

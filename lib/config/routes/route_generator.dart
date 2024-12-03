@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wac_sports/config/routes/routes.dart';
+import 'package:wac_sports/core/constants/app_constants.dart';
 import 'package:wac_sports/feature/authentication/view/forget_password.dart';
 import 'package:wac_sports/feature/authentication/view/login_screen.dart';
 import 'package:wac_sports/feature/authentication/view/register_screen.dart';
 import 'package:wac_sports/feature/authentication/view/reset_password.dart';
 import 'package:wac_sports/feature/authentication/view/splash_screen.dart';
+import 'package:wac_sports/feature/category/view/category_screen.dart';
 import 'package:wac_sports/feature/home/view/landing_screen.dart';
 
 class RouteGenerator {
@@ -29,6 +31,10 @@ class RouteGenerator {
         final code = settings.arguments as String;
         return _buildRoute(
             Routes.resetPassword, ResetPasswordScreen(code: code));
+      case Routes.categoryScreen:
+        final category = settings.arguments as CategoryModel;
+        return _buildRoute(
+            Routes.categoryScreen, CategoryScreen(category: category));
       default:
         return _buildRoute('/', const SizedBox());
     }
