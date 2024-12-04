@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wac_sports/config/styles/font_palette.dart';
 import 'package:wac_sports/core/constants/app_constants.dart';
-import 'package:wac_sports/feature/category/view/category_screen.dart';
+import 'package:wac_sports/feature/category/view/widgets/product_card_widget.dart';
 import 'package:wac_sports/feature/home/view/widgets/view_all_button_widget.dart';
 
 class ProductListWithTitle extends StatelessWidget {
