@@ -8,6 +8,7 @@ extension CustomContext on BuildContext {
   Color get primaryColor => ColorPalette.primaryContainer;
   Color get textColor => colors.onSecondary;
   Color get green => ColorPalette.greenColor;
+  Color get grey200 =>ColorPalette.grey200;
 }
 /**
 path.lineTo(w, h * 0.65);

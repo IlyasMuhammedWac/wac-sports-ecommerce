@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:wac_sports/config/routes/routes.dart';
 import 'package:wac_sports/config/styles/font_palette.dart';
 import 'package:wac_sports/core/constants/app_constants.dart';
 
@@ -23,20 +24,25 @@ class AppbarHomepageWidget extends StatelessWidget {
           ),
           10.horizontalSpace,
           Flexible(
-            child: Container(
-              height: 40,
-              decoration: BoxDecoration(
-                border: Border.all(
-                    color: Theme.of(context).colorScheme.onSecondary),
-                borderRadius: AppConstants.borderRadius10,
-              ),
-              child: Row(
-                children: [
-                  10.horizontalSpace,
-                  const Icon(Icons.search),
-                  5.horizontalSpace,
-                  const Text("Search here..."),
-                ],
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.searchScreen);
+              },
+              child: Container(
+                height: 40,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Theme.of(context).colorScheme.onSecondary),
+                  borderRadius: AppConstants.borderRadius10,
+                ),
+                child: Row(
+                  children: [
+                    10.horizontalSpace,
+                    const Icon(Icons.search),
+                    5.horizontalSpace,
+                    const Text("Search here..."),
+                  ],
+                ),
               ),
             ),
           )

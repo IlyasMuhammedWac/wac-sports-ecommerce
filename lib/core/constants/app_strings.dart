@@ -10,4 +10,5 @@ class AppStrings {
   static const dontHaveAcc = "Don't have an account?";
   static const forgotPassContent =
       "Please, enter your email address. You will recieve a link to create a new password via email";
+      
 }
