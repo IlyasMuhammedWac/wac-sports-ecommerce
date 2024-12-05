@@ -6,7 +6,7 @@ class Themes {
     scaffoldBackgroundColor: ColorPalette.primaryColorDark,
     appBarTheme: AppBarTheme(backgroundColor: ColorPalette.primaryColorDark),
     colorScheme: ColorScheme.dark(
-      background: ColorPalette.primaryColorDark,
+      surface: ColorPalette.primaryColorDark,
       onSecondary: ColorPalette.textColorWhite,
       onTertiary: ColorPalette.textColorGrey,
       error: ColorPalette.errorColor,
@@ -16,7 +16,7 @@ class Themes {
     scaffoldBackgroundColor: ColorPalette.primaryColorLight,
     appBarTheme: AppBarTheme(backgroundColor: ColorPalette.primaryColorLight),
     colorScheme: ColorScheme.light(
-      background: ColorPalette.primaryColorLight,
+      surface: ColorPalette.primaryColorLight,
       onSecondary: ColorPalette.textColorBlack,
       onTertiary: ColorPalette.textColorGrey,
       error: ColorPalette.errorColor,

@@ -6,4 +6,5 @@ class Routes {
   static const landingScreen = '/landingScreen';
   static const resetPassword = '/resetPasswordScreen';
   static const categoryScreen = '/categoryScreen';
+  static const searchScreen = '/searchScreen';
 }

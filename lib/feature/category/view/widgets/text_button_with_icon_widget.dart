@@ -15,7 +15,7 @@ class TextButtonWithIconWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var buttonStyle = ButtonStyle(
-        foregroundColor: MaterialStatePropertyAll(context.textColor));
+        foregroundColor: WidgetStatePropertyAll(context.textColor));
     return TextButton.icon(
       onPressed: onPressed,
       icon: Icon(iconData),

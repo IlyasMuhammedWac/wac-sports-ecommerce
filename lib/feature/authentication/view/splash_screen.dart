@@ -24,7 +24,7 @@ class SplashScreen extends StatelessWidget {
       }
     });
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: const Center(
         child: CustomLoader(
           size: Size(50, 50),

@@ -43,7 +43,7 @@ class CategoryRowWidget extends StatelessWidget {
                     Navigator.pushNamed(
                       context,
                       Routes.categoryScreen,
-                      arguments: categoryImages[index],
+                      arguments: {"category": categoryImages[index]},
                     );
                   },
                   child: _buildSingleCategoryCircle(index)),
